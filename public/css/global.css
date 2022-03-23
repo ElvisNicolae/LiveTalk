@@ -15,7 +15,9 @@ body {
 }
 
 .center-item {
-  width: 800px;
+  padding: 0rem 1.35rem;
+  width: 100%;
+  max-width: 940px;
   margin: auto;
   position: absolute;
   top: 50%;
@@ -31,12 +33,13 @@ body {
 }
 
 .center-item__form {
-  display: flex;
+  position: relative;
+  left: 50px;
 }
 
 .center-item__input {
   width: 100%;
-  max-width: 730px;
+  max-width: 760px;
   height: 40px;
   border: none;
   outline: none;
@@ -44,7 +47,7 @@ body {
   border-radius: 100px;
   font-size: 0.9rem;
   flex-shrink: 0;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
   background-color: white;
   color: black;
 }
@@ -74,4 +77,27 @@ body {
 
 .click-here:hover {
   color: var(--color-brand-dark);
+}
+
+@media (max-width: 1000px) {
+  .center-item__form {
+    position: static;
+  }
+
+  .center-item__input {
+    display: block;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .center-item__button {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .center-item__heading {
+    font-size: 1.3rem;
+  }
 }
