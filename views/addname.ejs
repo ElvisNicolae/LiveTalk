@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+
+  <link rel="stylesheet" href="/css/chat.css">
+  <link rel="stylesheet" href="/css/addname.css">
+</head>
+<body>
+
+  <div class="center-item">
+    <h1 class="center-item__heading">Hi! Please enter your name to start talking</h1>
+
+    <form 
+      class="center-item__form" 
+      action="<%= socketId ? `/processing-name?socketId=${socketId}` : "/processing-name" %>" 
+      method="post"
+    >
+      <input 
+        class="center-item__input" 
+        name="name" 
+        type="text" 
+        autocomplete="off"
+        required
+      >
+
+      <button class="center-item__button" type="submit">Submit</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

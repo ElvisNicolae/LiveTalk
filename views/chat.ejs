@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+
+  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  <script defer src="/scripts/chat.js"></script>
+  <link rel="stylesheet" href="/css/chat.css">
+
+</head>
+<body>
+  <div class="chat">
+    <div class="chat__header">
+      <% if(socketId) {%>
+        <p class="chat__room-link" onclick="handleCreateRoom()">Create another room</p>
+      <% } else {%>
+        <p class="chat__room-link" onclick="handleCopyRoomId()">Copy room link</p>
+      <% } %>
+
+
+      <div class="chat__me">
+        <span 
+          onclick="handleChangeName()"
+          class="chat__me-name"
+          data-hover="Change name"
+        > You are <strong> <%=yourName %> </strong> </span>
+        <div 
+          onclick="handlePhotoClick()"
+          class="chat__me-img"
+          alt="avatar"
+          data-hover="Change Photo"
+          style="background-image: url(<%= yourPhoto ? yourPhoto : "/Anonymous.png" %>)"
+          
+        >
+        </div>
+      </div>
+    </div>
+
+    <div class="chat__body">
+      <div class="chat__message-space"></div>
+
+      <form class="chat__form">
+        <input 
+          type="text" 
+          class="chat__input" 
+          placeholder="Write a message"
+          name="message"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="chat__button">
+          <svg 
+            width="20" 
+            height="20" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="#FFFFFF" 
+            gradientcolor1="#FFFFFF" 
+            gradientcolor2="#FFFFFF"
+          >
+            <path d="M5.694 12L2.299 3.272c-.236-.608.356-1.189.942-.982l.093.04 18 9a.75.75 0 01.097 1.283l-.097.058-18 9c-.583.291-1.217-.245-1.065-.847l.03-.096L5.694 12 2.299 3.272 5.694 12zM4.402 4.54l2.61 6.71h6.627a.75.75 0 01.743.648l.007.102a.75.75 0 01-.649.743l-.101.007H7.01l-2.609 6.71L19.322 12 4.401 4.54z">
+            </path>
+          </svg>
+        </button>
+      </form>
+      
+    </div>
+
+  </div>
+</body>
+</html>
