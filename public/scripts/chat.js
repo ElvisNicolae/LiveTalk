@@ -1,4 +1,5 @@
-const baseURL = "https://livetalkchat.herokuapp.com";
+// const baseURL = "https://livetalkchat.herokuapp.com";
+const baseURL = "http://localhost:3000/";
 
 const socket = io(baseURL);
 
@@ -104,6 +105,7 @@ const displayMessage = (msg, isSender, userName, userPhoto) => {
   if(isSender) {
     divMessage.classList.add("message--sender");
     imgOfSender.classList.add("message__img--sender");
+    pMessageContent.classList.add("message__text--sender");
     divMessage.appendChild(pMessageContent)
     divMessage.appendChild(imgOfSender);
   }
@@ -115,6 +117,7 @@ const displayMessage = (msg, isSender, userName, userPhoto) => {
     imgOfSender.classList.add("message__img--non-sender");
     pMessageName.classList.add("message__name");
     spanDate.classList.add("message__name");
+    pMessageContent.classList.add("message__text--non-sender");
 
     pMessageName.innerHTML = decodeURI(userName);
     spanDate.innerHTML = `${new Date().getHours()}:${new Date().getMinutes()}`;

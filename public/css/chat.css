@@ -156,6 +156,7 @@
   border-radius: 100%;
   background-position: center;
   background-size: cover;
+  flex-shrink: 0;
 }
 
 .message__img--sender {
@@ -170,4 +171,12 @@
   background-color: #e9ecf4;
   padding: 0.55rem 1.25rem;
   border-radius: 100px;
+}
+
+.message__text--sender {
+  margin-left: 4.5rem;
+}
+
+.message__text--non-sender {
+  margin-right: 4.5rem;
 }
