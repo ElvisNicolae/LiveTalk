@@ -1,5 +1,4 @@
-// const baseURL = "https://livetalkchat.herokuapp.com";
-const baseURL = "http://localhost:3000/";
+const baseURL = "https://livetalkchat.herokuapp.com";
 
 const socket = io(baseURL);
 
