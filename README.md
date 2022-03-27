@@ -1,4 +1,4 @@
-## <a href="https://elvisnicolae.github.io/greatfilms/#/"> Visit LiveTalk </a>
+## <a href="https://livetalkchat.herokuapp.com/"> Visit LiveTalk </a>
 
 https://livetalkchat.herokuapp.com/
 
